@@ -15,12 +15,7 @@ def getinput(requirements: List[str], title: str ="tkgetinput") -> list:
         label.grid(row=idx)
         entry.grid(row=idx,column=1)
         return strvar
-    def make_counter():
-        i = 0
-        while True:
-            yield i
-            i += 1
-    requirements = list(map(create_requirement, make_counter(), requirements))
+    requirements = list(map(create_requirement, range(len(requirements)), requirements))
     def finish():
         win.quit()
     ok = Button(win,text="ok",command=finish)
