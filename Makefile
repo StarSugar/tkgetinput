@@ -1,9 +1,13 @@
-all:
+all:tkgetinput
 
-tar:
-	cp -r src tkgetinput
+.PHONY:tar clean
+
+tar:tkgetinput
 	tar -cvf tkgetinput.tar tkgetinput
-	rm -rf tkgetinput
 
 clean:
+	rm -rf tkgetinput
 	rm -rf tkgetinput.tar
+
+tkgetinput:
+	cp -r src tkgetinput
